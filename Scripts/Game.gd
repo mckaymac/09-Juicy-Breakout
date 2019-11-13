@@ -28,6 +28,11 @@ func change_lives(l):
 	if lives <= 0:
 		get_tree().change_scene("res://Scenes/GameOver.tscn")
 
+func change_game():
+	if len(get_tree().get_nodes_in_group("Tiles")) < 20:
+		get_tree().get_nodes_in_group("Paddle").remove(0)
+		
+
 func make_new_ball(pos):
 	var ball = new_ball.instance()
 	ball.position = pos

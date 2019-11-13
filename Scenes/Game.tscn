@@ -8,7 +8,7 @@
 [ext_resource path="res://Scripts/Starting.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 72, 16 )
+extents = Vector2( 20.7037, 16 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,6 +18,7 @@ anchor_mode = 0
 current = true
 
 [node name="Paddle" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 544, 552 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -29,8 +30,27 @@ margin_left = -72.0
 margin_top = -16.0
 margin_right = 72.0
 margin_bottom = 16.0
+color = Color( 0.203922, 0.866667, 0.0196078, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
+shape = SubResource( 1 )
+
+[node name="Paddle2" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 544, 552 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Paddle2"]
+margin_left = -72.0
+margin_top = -16.0
+margin_right = 72.0
+margin_bottom = 16.0
+color = Color( 0.203922, 0.866667, 0.0196078, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle2"]
 shape = SubResource( 1 )
 
 [node name="Wall" type="StaticBody2D" parent="."]
